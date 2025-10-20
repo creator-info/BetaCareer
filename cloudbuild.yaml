@@ -1,13 +1,17 @@
 steps:
-  - name: 'alpine'
-    entrypoint: 'sh'
+  - name: alpine
+    entrypoint: sh
     args:
       - -c
       - |
-        echo " Cloud Build запущен для проекта BetaCareer"
-        echo "Текущие файлы в репозитории:"
-        ls -la
-        echo " Всё работает! BetaCareer CI connected!"
+          echo "✅ Cloud Build запущен для BetaCareer"
+          echo "Текущие файлы:"
+          ls -la
+
 timeout: "600s"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  # при желании: machineType: "E2_SMALL"
 
 
